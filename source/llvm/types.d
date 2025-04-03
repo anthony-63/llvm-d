@@ -97,7 +97,7 @@ static if (LLVM_Version >= asVersion(3, 9, 0))
 
 alias LLVMDisasmContextRef = void*;
 alias LLVMOpInfoCallback = extern(C) int function(void* DisInfo, ulong PC, ulong Offset, ulong Size, int TagType, void* TagBuf);
-alias LLVMSymbolLookupCallback = extern(C) const char* function(void* DisInfo, ulong ReferenceValue, ulong* ReferenceType, ulong ReferencePC, const char** ReferenceName);
+alias LLVMSymbolLookupCallback = extern(C) char* function(void* DisInfo, ulong ReferenceValue, ulong* ReferenceType, ulong ReferencePC, char** ReferenceName);
 
 struct LLVMOpInfoSymbol1
 {
